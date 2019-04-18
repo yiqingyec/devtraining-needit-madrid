@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" max_length="40" name="x_58872_needit_needit" sizeclass="3" type="collection">
+        <element default="10000" label="Added in Dictionary Entry" max_length="40" name="added_in_dictionary_entry" type="integer"/>
+        <element label="Added in Table Form" max_length="40" name="added_in_table_form" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="hr" label="Request type" max_length="40" name="u_choice_request_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Human Resources" sequence="0" value="hr"/>
+                <element inactive_on_update="false" label="Facilities" sequence="1" value="facilities"/>
+                <element inactive_on_update="false" label="Legal" sequence="2" value="legal"/>
+                <element inactive_on_update="false" label="You Choice" sequence="3" value="you_choice"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="When needed" mandatory="true" max_length="40" name="u_glide_when" type="glide_date_time"/>
+        <element label="Requested for" mandatory="true" max_length="32" name="u_reference_request_for" reference="sys_user" type="reference"/>
+    </element>
+</database>
