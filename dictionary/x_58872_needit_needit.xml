@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" extends="task" max_length="40" name="x_58872_needit_needit" sizeclass="3" type="collection">
+    <element audit="true" extends="task" max_length="40" name="x_58872_needit_needit" sizeclass="4" type="collection">
         <element default="10000" label="Added in Dictionary Entry" max_length="40" name="added_in_dictionary_entry" type="integer"/>
         <element label="Added in Table Form" max_length="40" name="added_in_table_form" type="integer"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="hr" label="Request type" max_length="40" name="u_choice_request_type" type="string">
@@ -10,7 +10,16 @@
                 <element inactive_on_update="false" label="You Choice" sequence="3" value="you_choice"/>
             </choice>
         </element>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="Choice 1" label="What needed" max_length="40" name="u_choice_what_needed" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Choice 1" sequence="0" value="Choice 1"/>
+                <element inactive_on_update="false" label="Choice 2" sequence="1" value="Choice 2"/>
+                <element inactive_on_update="false" label="Choice 3" sequence="2" value="Choice 3"/>
+                <element inactive_on_update="false" label="Other" sequence="3" value="other"/>
+            </choice>
+        </element>
         <element attributes="edge_encryption_enabled=true" label="When needed" mandatory="true" max_length="40" name="u_glide_when" type="glide_date_time"/>
         <element label="Requested for" mandatory="true" max_length="32" name="u_reference_request_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_string_other" type="string"/>
     </element>
 </database>

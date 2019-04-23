@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Practice debugging techniques in ServiceNow.</description>
+        <field>active</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Debugging</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+
+	 	var x = 7;
+ 	jslog("===============================");   
+ 	jslog("The value of x = " + x); 
+ 	jslog("The NeedIt State value = " + g_form.getValue('state'));
+ 	jslog("The currently logged in user is " + g_user.getFullName() + ".");
+	jslog("The currently logged in userID is " + g_user.userID+ ".");
+	jslog("u_reference_requested_for", g_form.getValue('u_reference_requested_for'));
+	jslog("u_requested_for", g_form.getValue('u_requested_for'));
+	jslog("requested_for", g_form.getValue('requested_for'));
+	jslog("short_descriptionr", g_form.getValue('short_descriptionr'));
+	try {
+		g_form.setValue('u_reference_requested_for', g_user.userID);
+		jslog('setValue of field u_reference_requested_for is done.');
+		g_form.setValue('short_description',g_form.getValue('short_description') + " -  Updated field value");
+	} catch (err) {
+		jslog('A JavaScript runtime error occurred: ' + err.message);
+	}
+	jslog("===============================");   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-04-23 15:31:50</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c63c3768db413300dd0f85184b96196f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Debugging</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_client_c63c3768db413300dd0f85184b96196f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-04-23 15:41:34</sys_updated_on>
+        <table>x_58872_needit_needit</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
